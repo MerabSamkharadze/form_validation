@@ -3,7 +3,7 @@ body {
   height: 100vh;
   align-items: center;
   justify-content: center;
-  background: url(/images/background.jpg);
+  background: url(https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?cs=srgb&dl=pexels-pixabay-531880.jpg&fm=jpg);
   background-size: cover;
 }
 .container {
@@ -13,7 +13,6 @@ body {
   border-radius: 15px;
   padding: 30px;
   margin: 0 30px;
-  box-shadow: inset -2px 2px 2px white;
 }
 .form_title {
   font-size: 26px;
@@ -90,11 +89,11 @@ body {
   border: none;
   border-radius: 3px;
   color: rgb(209, 209, 209);
-  background: rgba(63, 114, 76, 0.7);
+  background: rgba(8, 185, 52, 0.795);
 }
 
 .form-submit-btn input:hover {
-  background: rgba(56, 204, 93, 0.7);
+  background: rgba(48, 223, 91, 0.7);
   color: rgb(255, 255, 255);
 }
 

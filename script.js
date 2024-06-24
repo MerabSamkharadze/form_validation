@@ -24,8 +24,16 @@ form.addEventListener("submit", function (e) {
     document.getElementById("lastName_error").textContent = "";
     errorsObj.lastName = "";
   }
-
+  //
   const phonenumberFild = document.getElementById("phonenumber").value;
+  if (phonenumberFild === "") {
+    document.getElementById("phonenumber_error").textContent =
+      "Enter your phone number";
+    errorsObj.phonenumber = "Phone number field can not be empty";
+  } else {
+    document.getElementById("phonenumber_error").textContent = "";
+    errorsObj.phonenumber = "";
+  }
   //
   const passwordFild = document.getElementById("password").value;
 

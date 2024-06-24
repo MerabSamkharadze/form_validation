@@ -70,6 +70,10 @@ form.addEventListener("submit", function (e) {
     document.querySelector(".gender_error").textContent =
       "Please select your gender";
   }
+  if (Object.keys(errorsObj).length === 0) {
+    document.querySelector(".form-submit-btn").style.cursor = "pointer";
+    form.submit();
+  }
 });
 
 const emailFild = document.getElementById("email");

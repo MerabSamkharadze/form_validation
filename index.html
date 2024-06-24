@@ -15,7 +15,7 @@
           <div class="user_info_box">
             <label for="name">Firstname</label>
             <input type="text" name="name" id="name" placeholder="Firstname" />
-            <p class="p">fill input</p>
+            <p class="p1" id="name_error"></p>
           </div>
           <div class="user_info_box">
             <label for="lastName">Lastname</label>
@@ -25,11 +25,13 @@
               id="lastName"
               placeholder="Lastname"
             />
+            <p class="p2" id="lastName_error"></p>
           </div>
 
           <div class="user_info_box">
             <label for="email">Email</label>
             <input type="email" name="email" id="email" placeholder="Email" />
+            <p class="p1" id="email_error"></p>
           </div>
           <div class="user_info_box">
             <label for="phonenumber">Phonenumber</label>
@@ -39,6 +41,7 @@
               id="phonenumber"
               placeholder="Phonenumber"
             />
+            <p class="p" id="phonenumber_error"></p>
           </div>
 
           <div class="user_info_box">
@@ -49,7 +52,9 @@
               id="password"
               placeholder="Password"
             />
+            <p class="p" id="password_error"></p>
           </div>
+
           <div class="user_info_box">
             <label for="password2">Confirm Password</label>
             <input
@@ -58,17 +63,17 @@
               id="password2"
               placeholder="Confirm Password"
             />
+            <p class="p" id="password2_error"></p>
           </div>
         </div>
         <div class="gender-details-box">
           <span class="gender-title">Gender</span>
+
           <div class="gender-category">
             <input type="radio" name="gender" id="male" />
             <label for="male">Male</label>
             <input type="radio" name="gender" id="female" />
             <label for="female">Female</label>
-            <input type="radio" name="gender" id="other" />
-            <label for="other">Other</label>
           </div>
         </div>
         <div class="form-submit-btn">

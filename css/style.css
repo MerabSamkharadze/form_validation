@@ -9,7 +9,7 @@ body {
 .container {
   width: 100%;
   max-width: 650px;
-  background: rgba(7, 1, 54, 0.5);
+  background: rgba(7, 1, 54, 0.784);
   border-radius: 15px;
   padding: 30px;
   margin: 0 30px;
@@ -101,11 +101,25 @@ body {
 #error {
   color: red;
 }
-.p {
+.p1 {
   position: absolute;
-  bottom: 0;
+  bottom: -5px;
+  left: 0;
+  min-width: 300px;
   color: red;
+  font-weight: 600;
   font-size: 17px;
+  transition: all 1s;
+}
+.p2 {
+  position: absolute;
+  bottom: -5px;
+  left: 5%;
+  min-width: 300px;
+  color: red;
+  font-weight: 600;
+  font-size: 17px;
+  transition: all 1s;
 }
 @media (max-width: 600px) {
   .container {

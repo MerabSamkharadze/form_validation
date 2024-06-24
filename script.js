@@ -114,3 +114,17 @@ function validationPassword() {
   }
 }
 passwordFild.addEventListener("keyup", validationPassword);
+///show password event
+let eyeStatus = false;
+const pasword_img = document.querySelector(".pasword_img");
+pasword_img.addEventListener("click", (e) => {
+  if (!eyeStatus) {
+    pasword_img.src = "images/open.svg";
+    passwordFild.type = "text";
+    eyeStatus = true;
+  } else {
+    pasword_img.src = "images/close.svg";
+    passwordFild.type = "password";
+    eyeStatus = false;
+  }
+});

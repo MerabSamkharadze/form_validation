@@ -124,6 +124,13 @@ body {
   font-size: 17px;
   color: red;
 }
+.pasword_img {
+  width: 30px;
+  position: absolute;
+  top: 46px;
+  left: 235px;
+  cursor: pointer;
+}
 @media (max-width: 600px) {
   .container {
     min-width: 280px;

@@ -4,6 +4,16 @@ const form = document.getElementById("form");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   let errorsObj = {};
+
+  //
+  const emailFild = document.getElementById("email").value;
+  if (emailFild === "") {
+    errorsObj.email = "Enter your email";
+    document.getElementById("email_error").innerText = "Enter your email";
+  } else {
+    document.getElementById("email_error").innerText = "";
+    errorsObj.email = "";
+  }
   //
   const usernameFild = document.getElementById("name").value;
   if (usernameFild === "") {
@@ -42,6 +52,9 @@ form.addEventListener("submit", function (e) {
     document.getElementById("password2_error").textContent =
       "Passwords do not match";
     errorsObj.password2 = "Passwords do not match";
+  } else if (ConfigPasswordFild === "") {
+    document.getElementById("password2_error").textContent =
+      "This field can not be empty";
   } else {
     document.getElementById("password2_error").textContent = "";
     errorsObj.password2 = "";
@@ -50,9 +63,12 @@ form.addEventListener("submit", function (e) {
   const maleRadio = document.getElementById("male").checked;
   const femaleRadio = document.getElementById("female").checked;
   if (maleRadio || femaleRadio) {
-    return;
+    document.querySelector(".gender_error").textContent = "";
+    errorsObj.gender = "";
   } else {
     errorsObj.gender = "Please select your gender";
+    document.querySelector(".gender_error").textContent =
+      "Please select your gender";
   }
 });
 
@@ -75,3 +91,22 @@ function validationEmail() {
   }
 }
 emailFild.addEventListener("keyup", validationEmail);
+
+// password validation
+
+const passwordFild = document.getElementById("password");
+function validationPassword() {
+  const passwordValue = document.getElementById("password").value;
+  const error = document.getElementById("password_error");
+  const passwordPattern = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+
+  if (passwordValue.match(passwordPattern)) {
+    error.innerHTML = "";
+  } else {
+    error.innerHTML = "Your Password is invalid";
+  }
+  if (passwordValue === "") {
+    error.innerHTML = "";
+  }
+}
+passwordFild.addEventListener("keyup", validationPassword);

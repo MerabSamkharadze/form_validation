@@ -27,8 +27,8 @@ form.addEventListener("submit", function (e) {
   const lastNameFild = document.getElementById("lastName").value;
   if (lastNameFild === "") {
     document.getElementById("lastName_error").textContent =
-      "Username field can not be empty";
-    errorsObj.lastName = "Username field can not be empty";
+      "Lastname field can not be empty";
+    errorsObj.lastName = "Lastname field can not be empty";
   } else {
     document.getElementById("lastName_error").textContent = "";
     delete errorsObj.lastName;

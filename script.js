@@ -1,9 +1,8 @@
 "use strict ";
-
+let errorsObj = {};
 const form = document.getElementById("form");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  let errorsObj = {};
 
   //
   const emailFild = document.getElementById("email").value;
@@ -12,7 +11,7 @@ form.addEventListener("submit", function (e) {
     document.getElementById("email_error").innerText = "Enter your email";
   } else {
     document.getElementById("email_error").innerText = "";
-    errorsObj.email = "";
+    delete errorsObj.email;
   }
   //
   const usernameFild = document.getElementById("name").value;
@@ -22,7 +21,7 @@ form.addEventListener("submit", function (e) {
     errorsObj.name = "Username field can not be empty";
   } else {
     document.getElementById("name_error").textContent = "";
-    errorsObj.name = "";
+    delete errorsObj.name;
   }
   //
   const lastNameFild = document.getElementById("lastName").value;
@@ -32,7 +31,7 @@ form.addEventListener("submit", function (e) {
     errorsObj.lastName = "Username field can not be empty";
   } else {
     document.getElementById("lastName_error").textContent = "";
-    errorsObj.lastName = "";
+    delete errorsObj.lastName;
   }
   //
   const phonenumberFild = document.getElementById("phonenumber").value;
@@ -42,7 +41,7 @@ form.addEventListener("submit", function (e) {
     errorsObj.phonenumber = "Phone number field can not be empty";
   } else {
     document.getElementById("phonenumber_error").textContent = "";
-    errorsObj.phonenumber = "";
+    delete errorsObj.phonenumber;
   }
   //
   const passwordFild = document.getElementById("password").value;
@@ -55,27 +54,31 @@ form.addEventListener("submit", function (e) {
   } else if (ConfigPasswordFild === "") {
     document.getElementById("password2_error").textContent =
       "This field can not be empty";
+    errorsObj.password22 = "This field can not be empty";
   } else {
     document.getElementById("password2_error").textContent = "";
-    errorsObj.password2 = "";
+    delete errorsObj.password2;
+    delete errorsObj.password22;
   }
   //
   const maleRadio = document.getElementById("male").checked;
   const femaleRadio = document.getElementById("female").checked;
   if (maleRadio || femaleRadio) {
     document.querySelector(".gender_error").textContent = "";
-    errorsObj.gender = "";
+    delete errorsObj.gender;
   } else {
     errorsObj.gender = "Please select your gender";
     document.querySelector(".gender_error").textContent =
       "Please select your gender";
   }
+  console.log(Object.keys(errorsObj).length);
   if (Object.keys(errorsObj).length === 0) {
     document.querySelector(".form-submit-btn").style.cursor = "pointer";
+    console.log("done");
     form.submit();
   }
 });
-
+//email validation
 const emailFild = document.getElementById("email");
 
 function validationEmail() {
@@ -86,9 +89,10 @@ function validationEmail() {
 
   if (emailValue.match(emailPattern)) {
     error.innerHTML = "";
+    delete errorsObj.email;
   } else {
     error.innerHTML = "Your Email is invalid";
-    error.style.color = "red";
+    errorsObj.email = "Your Email is invalid";
   }
   if (emailValue === "") {
     error.innerHTML = "";
@@ -106,14 +110,17 @@ function validationPassword() {
 
   if (passwordValue.match(passwordPattern)) {
     error.innerHTML = "";
+    delete errorsObj.password;
   } else {
     error.innerHTML = "Your Password is invalid";
+    errorsObj.password = "Your Password is invalid";
   }
   if (passwordValue === "") {
     error.innerHTML = "";
   }
 }
 passwordFild.addEventListener("keyup", validationPassword);
+
 ///show password event
 let eyeStatus = false;
 const pasword_img = document.querySelector(".pasword_img");

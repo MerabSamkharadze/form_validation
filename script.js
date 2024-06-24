@@ -39,7 +39,12 @@ form.addEventListener("submit", function (e) {
 
   const ConfigPasswordFild = document.getElementById("password2").value;
   if (passwordFild !== ConfigPasswordFild) {
+    document.getElementById("password2_error").textContent =
+      "Passwords do not match";
     errorsObj.password2 = "Passwords do not match";
+  } else {
+    document.getElementById("password2_error").textContent = "";
+    errorsObj.password2 = "";
   }
   //
   const maleRadio = document.getElementById("male").checked;

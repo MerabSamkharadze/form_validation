@@ -128,3 +128,18 @@ pasword_img.addEventListener("click", (e) => {
     eyeStatus = false;
   }
 });
+
+const ConfigPasswordFild = document.getElementById("password2");
+let eyeStatus2 = false;
+const pasword_img2 = document.querySelector(".pasword_img2");
+pasword_img2.addEventListener("click", (e) => {
+  if (!eyeStatus2) {
+    pasword_img2.src = "images/open.svg";
+    ConfigPasswordFild.type = "text";
+    eyeStatus2 = true;
+  } else {
+    pasword_img2.src = "images/close.svg";
+    ConfigPasswordFild.type = "password";
+    eyeStatus2 = false;
+  }
+});

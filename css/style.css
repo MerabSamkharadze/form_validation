@@ -128,7 +128,14 @@ body {
   width: 30px;
   position: absolute;
   top: 46px;
-  left: 235px;
+  left: 80%;
+  cursor: pointer;
+}
+.pasword_img2 {
+  width: 30px;
+  position: absolute;
+  top: 46px;
+  left: 84%;
   cursor: pointer;
 }
 @media (max-width: 600px) {
